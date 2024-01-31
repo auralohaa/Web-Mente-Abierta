@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Mente Abierta - CENIGRAF / SENNOVA</title>
+    <link rel="icon" href="img/logoSena.png" type="image icon">
+    <link rel="stylesheet" href="flexboxgrid.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="anime.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="flex-container">
+        <!-- Slider Button superior  -->
+        <div class="row">
+            <div class="col-xs-12 col-md-12 leftbuttoncontainer">
+                <!-- Botón de la ubi del centro -->
+                <div class="dropdown" onclick="toggleDropdown()">
+                    <button>
+                        <img src="img/ubicacionIcon.png" alt="Icono de Ubicación">
+                        <span>SENA: <strong>SELECCIONA TU CENTRO</strong></span>
+                        <span class="custom-arrow"></span> &#x25BC;
+                    </button>
+                    <!-- Contenido boton ubicacion con menú desplegable -->
+                    <div id="dropdown-menu" class="dropdown-menu">
+                        <p onclick="changeColor(event)"><strong>CENIGRAF</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nueva sección debajo del slider -->
+        <div class="row">
+            <!-- SECCIÓN DEL LOGO DE CENIGRAF  -->
+            <div class="col-xs-12 col-md-12 menubox-container">
+                <div class="logo-container">
+                    <img src="img/logoCenigraf.png" alt="logoCenigraf">
+                </div>
+
+
+                <div class="buttons-container">
+                    <!-- BOTONES ORIGINALES DE LAS SECCIONES -->
+                    <nav class="navigation-bar">
+                        <button class="nav-button" onclick="navigateToSection('festivalmenteabierta')">Festival Mente Abierta</button>
+                        <button class="nav-button" onclick="navigateToSection('top5proyectos')">Top 5 Proyectos</button>
+                        <button class="nav-button" onclick="navigateToSection('sennova')">Sennova</button>
+                    </nav>
+                </div>
+                <div class="logo-button" onmouseover="toggleLogoBackground(true)" onmouseout="toggleLogoBackground(false)">
+                    <!-- Botón con el logo del SENA -->
+                    <div class="logo-container">
+                        <img src="img/logo-de-Sena-sin-fondo-Blanco-300x300.png" alt="sena-logo" class="logo-image" onclick="toggleLogoMenu()"><span class="custom-arrow">&#x25BC;</span>
+                    </div>
+    
+                    <!-- Menú del logo del SENA -->
+                    <div id="logo-menu" class="logo-menu">
+                        <button onclick="openInNewTab('https://oferta.senasofiaplus.edu.co/sofia-oferta/')">
+                            <img src="img/homeIcon.png" alt="pagina-icon"> <strong>Página Principal</strong> SENA
+                        </button>
+                        <button onclick="openInNewTab('https://comunicaciongraficasena.blogspot.com/')">
+                            <img src="img/blogIcon.png" alt="blog-icon"> <strong>Blog</strong> Cenigraf
+                        </button>
+                        <button onclick="openInNewTab('https://www.instagram.com/cenigrafoficial/?hl=en')">
+                            <img src="img/instagramIcon.png" alt="instagram-icon"> <strong>Instagram</strong> Cenigraf
+                        </button>
+                        <button onclick="openInNewTab('https://youtube.com/@cenigrafsena?si=zbNRQHXdnVR92byP')">
+                            <img src="img/youtubeIcon.png" alt="youtube-icon"> <strong>Youtube</strong> Cenigraf
+                        </button>
+                        <button onclick="openInNewTab('https://www.sena.edu.co/es-co/formacion/Paginas/tecnologia-innovacion.aspx')">
+                            <img src="img/logoSennovasin.png" alt="sennova-icon" class="sennova-icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <!-- CARRUSEL DE FOTOS DE LOS PROYECTOS-->
+            <div class="col-xs-12 col-md-12 carousel-container">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1: DEFRUNI -->
+                        <div class="swiper-slide">
+                            <img src="img/defruniCarrusel.jpg" alt="Slide 1">
+                        </div>
+                        <!-- Slide 2: ALCAMELLO -->
+                        <div class="swiper-slide">
+                            <img src="img/alcamelloCarrusel.jpg" alt="Slide 2">
+                        </div>
+                        <!-- Slide 3: TALENTIC -->
+                        <div class="swiper-slide">
+                            <img src="img/talenticCarrusel.jpg" alt="Slide 3">
+                        </div>
+                        <!-- Slide 4: UNIVERSAL CÓMICS -->
+                        <div class="swiper-slide">
+                            <img src="img/" alt="Slide 4">
+                        </div>
+                    </div>
+                    <!-- PAGINACIÓN DEL CARRUSEL -->
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+            <!-- UN SLIDER DIVISOR DE SECCIONES  -->
+            <div class="col-xs-12 col-md-12 aviso"></div>
+
+            
+            <!-- BOTONES QUE DIRIGEN A LAS SECCIONES EN FORMATO CELULAR OSEA CUANDO SE DISMINUYE LA PANTALLA PARA QUE APAREZCAN -->
+            <div class="row">
+                <div class="col-xs-12 col-md-12 menubox2-container">
+                    <div class="menubox2-buttons">
+                        <nav class="navigation-bar">
+                            <button class="nav-button" onclick="navigateToSection('festivalmenteabierta')">Festival Mente Abierta</button>
+                            <button class="nav-button" onclick="navigateToSection('top5proyectos')">Top 5 Proyectos</button>
+                            <button class="nav-button" onclick="navigateToSection('sennova')">Sennova</button>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+
+
+   
+            <!-- Sección FESTIVAL MENTE ABIERTA -->
+            <div class="row">
+
+                <button class="back-button" onclick="volverAtras()">
+                    <img src="img/flecha.png" alt="Flecha">
+                </button>
+
+
+                <section id="festivalmenteabierta" class="section">
+                    <button class="back-button" onclick="volverAtras()"
+                        <img src="img/flecha.png" alt="Flecha"> 
+                    </button>         
+                    <div class="col-xs-12 col-md-12 festivalmenteabierta">
+                        <p class="festival-text">
+
+                            En el marco del Festival Mente Abierta, 
+                            tenemos el honor de presenciar y dar a conocer una exhibición que marca el debut 
+                            y la presentación de varios proyectos innovadores y prometedores. 
+                            Entre estos destacan proyectos respaldados por el Centro de Investigación 
+                            e Innovación del Sena (Sennova), demostrando la colaboración y el apoyo 
+                            significativo en su construcción. En esta recopilación, se podrá explorar brevemente 
+                            algunos de estos proyectos vanguardistas que abarcan desde plataformas de 
+                            empleo y concientización hasta tiendas en línea y servicios personalizados. Cada uno de estos emprendimientos refleja la dedicación, creatividad y esfuerzo de sus creadores, ofreciendo soluciones únicas y relevantes en sus respectivos campos.
+                        </p>
+                    </div>
+                </section>
+    
+ 
+                <!-- Sección TOP 5 PROYECTOS -->
+                <section id="top5proyectos" class="section">
+                    <button class="back-button" onclick="volverAtras()">
+                        <img src="img/flecha.png" alt="Flecha"> 
+                    </button>         
+                    <div class="col-xs-12 col-md-12 top5proyectos">
+                        <!-- Banner en la parte superior -->        
+                        <div class="banner">             
+                            <span>¡Conoce los 5 mejores Proyectos!</span>
+                        </div>
+                        
+                        <div class="buttons-container">
+                            <!-- Botones PARA REDIRIGIR A PAGINA DE PROYECTO -->
+                            <button class="square-button button1" onclick="mostrarDescripcion('Proyecto 1', 'Descripción del Proyecto 1')"></button>
+                            <button class="square-button button2" onclick="mostrarDescripcion('Proyecto 2', 'Descripción del Proyecto 2')"></button>
+                            <button class="square-button button3" onclick="mostrarDescripcion('Proyecto 3', 'Descripción del Proyecto 3')"></button>
+                            <button class="square-button button4" onclick="mostrarDescripcion('Proyecto 4', 'Descripción del Proyecto 4')"></button>
+                            <button class="square-button button5" onclick="mostrarDescripcion('Proyecto 5', 'Descripción del Proyecto 5')"></button>
+                        </div>
+
+                        <!-- Modales para descripción de proyectos -->
+                        <div id="modalProyecto1" class="modal modal-proyecto1 ">
+                            <div class="modal-content-proyecto1">
+                                <span class="close" onclick="cerrarModal('modalProyecto1')">&times;</span>
+                                
+                            </div> 
+                        </div>
+
+                        <div id="modalProyecto2" class="modal modal-proyecto2">
+                            <div class="modal-content-proyecto2">
+                                <span class="close" onclick="cerrarModal('modalProyecto2')">&times;</span>
+                            </div>
+                        </div>
+
+                        <div id="modalProyecto3" class="modal modal-proyecto3">
+                            <div class="modal-content-proyecto3">
+                                <span class="close" onclick="cerrarModal('modalProyecto3')">&times;</span>
+                            </div>
+                        </div>
+
+                        <div id="modalProyecto4" class="modal modal-proyecto4">
+                            <div class="modal-content-proyecto4">
+                                <span class="close" onclick="cerrarModal('modalProyecto4')">&times;</span>   
+                            </div>
+                        </div>
+
+                        <div id="modalProyecto5" class="modal modal-proyecto5">
+                            <div class="modal-content-proyecto5">
+                                <span class="close" onclick="cerrarModal('modalProyecto5')">&times;</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+
+
+                <!-- Sección SENNOVA -->
+                <section id="sennova" class="section">
+                    <button class="back-button" onclick="volverAtras()">
+                        <img src="img/flecha.png" alt="Flecha"> 
+                    </button>        
+                    <div class="col-xs-12 col-md-12 sennova">
+                        <h1 class="wow-title">
+                            Wow!
+                        </h1>
+
+                        <p class="sennova-text">
+                            El propósito del Sistema de Investigación, Desarrollo Tecnológico e 
+                            Innovación (SENNOVA) es fomentar habilidades para la investigación 
+                            aplicada y el desarrollo experimental en los Centros de Formación del 
+                            SENA. Esto se logra mediante la ejecución de proyectos en las áreas de 
+                            ciencia, tecnología e innovación dentro de las diversas líneas programáticas 
+                            del sistema. Al mismo tiempo, se busca integrar y compartir capacidades 
+                            innovadoras, productivas y competitivas con las empresas.
+                        </p>
+                    </div>
+                
+                    <!-- Sección CRÉDITOS-->
+                    <section id="creditos" class="section">         
+                        <div class="col-xs-12 col-md-12 creditos-container">
+                            <p class="creditos-text">
+                                COPYRIGHT Laura Jimena Garzón Roberto 2024©
+                            </p>
+                        </div>
+                    </section>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <script>
+        function toggleMenu() {
+            var menuDropdown = document.querySelector('.menu-dropdown');
+            menuDropdown.style.display = (menuDropdown.style.display === "block") ? "none" : "block";
+        }
+    
+        function toggleDropdown() {
+            var dropdownMenu = document.getElementById("dropdown-menu");
+            dropdownMenu.style.display = (dropdownMenu.style.display === "block") ? "none" : "block";
+        }
+    
+        function changeColor(event) {
+            // Acciones específicas al hacer clic en "CENIGRAF"
+            var dropdownMenu = document.getElementById("dropdown-menu");
+            anime({
+                targets: dropdownMenu,
+                backgroundColor: [
+                    '#006400', '#008000', '#00A000', '#00C000', '#00E000', '#00FF00', '#80FF80', // gama verde
+                    '#FFD700', '#FFA500', '#FF8C00', '#FF6347', '#FFFFFF',  // gama de anaranjados
+                ],
+                easing: 'linear',
+                duration: 2000,
+                loop: false,
+                complete: function (anim) {
+                    dropdownMenu.style.backgroundColor = anim.animatables[0].target.bgColor;
+                }
+            });
+    
+            // Detiene la propagación del evento para evitar que se oculte el menú
+            event.stopPropagation();
+        }
+    
+        // Cierra el menú si hago clic en cualquier parte fuera del botón y del menú
+        document.addEventListener("click", function (event) {
+            var dropdown = document.querySelector('.dropdown');
+            var dropdownMenu = document.getElementById("dropdown-menu");
+            if (event.target !== dropdown && !dropdown.contains(event.target) && event.target !== dropdownMenu && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.style.display = "none";
+            }
+        });
+    
+        function toggleLogoBackground(activate) {
+            var logoButton = document.querySelector('.logo-button');
+            var logoImage = document.querySelector('.logo-image');
+    
+            if (activate) {
+                logoButton.style.backgroundColor = 'white';
+                logoImage.src = 'img/logoVerdeSena.png'; // Cambia la imagen al logo verde
+            } else {
+                logoButton.style.backgroundColor = 'transparent';
+                logoImage.src = 'img/logo-de-Sena-sin-fondo-Blanco-300x300.png'; // Restaura la imagen original
+            }
+        }
+    
+        function toggleLogoMenu() {
+            var logoMenu = document.getElementById("logo-menu");
+            logoMenu.style.display = (logoMenu.style.display === "block") ? "none" : "block";
+        }
+    
+        function openInNewTab(url) {
+            var win = window.open(url, '_blank');
+            win.focus();
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            var mySwiper = new Swiper('.swiper-container', {
+                slidesPerView: 1,
+                spaceBetween: 10,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                autoplay: {
+                    delay: 800,
+                    disableOnInteraction: false,
+                },
+                speed: 3000, // Ajusta la velocidad del carrusel (en milisegundoooooss)
+                effect: 'slide', // Cambia el efecto de transición
+            });
+        });
+
+
+
+        / Función para inicializar ScrollReveal solo cuando se activa la navegación/
+        function initScrollReveal() {
+            ScrollReveal().reveal('.box', {
+                duration: 1000,   // Duración de la animación en milisegundos
+                origin: 'bottom',  // Desde dónde aparecerá el elemento
+                distance: '20px',  // Distancia de desplazamiento
+                easing: 'cubic-bezier(0.5, 0, 0, 1)',  // Función de aceleración
+                interval: 200       // Intervalo entre elementos (en milisegundos)
+            });
+        }
+
+        // Función para navegar a la sección y activar ScrollReveal
+        function navigateToSection(sectionId) {
+            // Llama a la función de desplazamiento suave
+            scrollToSection(sectionId);
+
+            // Inicializa ScrollReveal después de desplazarse a la sección
+            setTimeout(initScrollReveal, 500); 
+        }
+
+        // Función para desplazamiento suave a las secciones
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Función para volver al inicio
+        function volverAtras() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Llama a la función de inicialización de ScrollReveal cuando se carga la página
+        window.onload = function () {
+
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                scrollToSection(hash);
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Añade la clase 'show' a festivalmenteabierta cuando el contenido esté listo para mostrarse
+            
+            document.querySelector('.festivalmenteabierta').classList.add('show');
+            // Agrega un event listener para detectar el desplazamiento de la página
+            window.addEventListener('scroll', function () {
+
+                // Obtiene la posición y dimensiones de la sección Festival Mente Abierta
+                var festivalSection = document.getElementById('festivalmenteabierta');
+                var rect = festivalSection.getBoundingClientRect();
+
+                // Verifica si la sección está al menos parcialmente visible en la ventana
+                if (
+                rect.top <= window.innerHeight / 2 &&
+                rect.bottom >= 0
+                ) {
+                    // Si está visible, agrega la clase 'show'
+                    document.querySelector('.festivalmenteabierta').classList.add('show');
+                } else {
+                    // Si no está visible, quita la clase 'show'
+                    document.querySelector('.festivalmenteabierta').classList.remove('show');
+                }
+            });
+        });
+
+
+        function mostrarDescripcion(proyecto, descripcion) {
+            var modalId = 'modal' + proyecto.replace(/\s+/g, ''); // Genera un ID único para cada modal
+            var modal = document.getElementById(modalId);
+
+   
+            // Muestra el modal y actualiza el contenido
+            modal.style.display = 'block';
+            modal.querySelector('h2').innerText = proyecto;
+            modal.querySelector('p').innerText = descripcion;
+        }
+
+
+        function cerrarModal(modalId) {    
+            var modal = document.getElementById(modalId);   
+            modal.style.display = 'none';
+        }
+
+        
+    </script>
+    
+</body>
+
+</html>

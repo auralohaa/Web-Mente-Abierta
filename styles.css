@@ -1,0 +1,1281 @@
+@font-face {
+    font-family: 'Groovy';
+    src: url(texto/SuperVibes-9YLBL.otf);
+}
+@font-face {
+    font-family: 'Palo';
+    src: url(texto/PlatNomor-eZ2dm.otf);
+}
+@font-face {
+    font-family: 'Mancha';
+    src: url(texto/Crooth-d9xwg.ttf);
+}
+@font-face {
+    font-family: 'Comica';
+    src: url(texto/Brookeshappell8-eoKB.ttf);
+}
+@font-face {
+    font-family: 'Palo2';
+    src: url(texto/ShineTypewriter-lgwzd.ttf);
+}
+
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    position: relative; 
+}
+
+body::before {
+    content: ""; /* Crea un pseudo-elemento */
+    position: fixed; /* Fija el elemento para cubrir toda la página */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Detrás del contenido principal */
+    background: url('img/backgroundPage.jpg') center/cover no-repeat;
+    filter: blur(5px); /* Ajusta el valor del desenfoque según sea necesario */
+}
+
+
+.flex-container {
+    width: 100vw;
+}
+
+/* Botón de retroceso */
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.back-button:hover {
+    background-color: #2980b9;
+}
+
+.back-button img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+
+/* Estilo para la caja en la parte superior */
+.leftbuttoncontainer {
+    height: 3rem;
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Centra verticalmente el contenido */
+    background: linear-gradient(to right, #27a002, #f39200);
+    position: relative; /* Añadido para posicionar el menú relativo a este contenedor */
+}
+
+/* Estilo para el botón dentro de leftbuttoncontainer */
+.leftbuttoncontainer button {
+    cursor: pointer;
+    height: 2rem;
+    margin-left: 25px;
+    background: none; 
+    border: 2px solid transparent; /* Inicialmente transparente */
+    color: #f39200;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    position: relative; /* Añadido para posicionar el menú relativo a este contenedor */
+    transition: border-color 0.20s ease; 
+}
+
+/* Estilo para el botón cuando se pasa el ratón sobre él */
+.leftbuttoncontainer button:hover {
+    border-color: orange; 
+}
+
+/* Estilo para el botón cuando está activo */
+.leftbuttoncontainer button:active {
+    border-color: #ff8c00; 
+}
+
+/* Ajuste de tamaño para el icono de ubicación */
+.leftbuttoncontainer button img {
+    height: 1em;
+    width: auto;
+    margin-right: 5px; 
+}
+
+/* Estilo inicial del menú desplegable */
+.dropdown-menu {
+    margin-left: 5px;
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px); 
+    left: 30px;
+    width: 220px; 
+    background-color: #ffffff; 
+    border: 2px solid transparent;  
+    color: black;
+    text-shadow: white 1px 1px;
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    border-top: none;
+    border-radius: 10px;
+    padding-left: 30px;
+    transition: background-color 0.3s;
+    z-index: 2;
+    margin-top: -10px;
+    border-color: orange;
+}
+
+/* Estilo al posarse sobre el menú desplegable */
+.dropdown-menu:hover {
+    background-color: whitesmoke; 
+    cursor: pointer;
+}
+
+/* Estilo para la nueva sección debajo del slider */
+.menubox-container {
+    height: 9rem;
+    width: 100vw;
+    background: linear-gradient(to left, #27a002, #f39200);
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para el logo de CENIGRAF */
+.logo-container {
+    margin-left: 20px; 
+}
+
+.logo-container img {
+    height: 500px; 
+    width: 30rem;
+}
+
+/* Estilo para la nueva sección debajo del slider */
+.box-container {
+    height: 9rem;
+    width: 100vw;
+    background: linear-gradient(to left, #27a002, #f39200);
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para el logo de CENIGRAF en pantallas más pequeñas */
+.logo-container {
+    margin-left: 10px;
+}
+
+.logo-container img {
+    height: 30rem;
+    width: 100%;
+}
+
+/* Estilo para el contenido de la nueva sección */
+.content-box {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Estilo para los botones */
+.buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Estilo para los botones en pantallas más grandes */
+.buttons-container button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    margin-right: 70px;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Estilo para la línea naranja al posarse sobre los botones */
+.buttons-container button::after {
+    content: "";
+    display: block;
+    width: 0; /* Inicialmente invisible */
+    height: 2px;
+    background-color: #FFA500; /* Color naranja */
+    transition: width 0.50s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Estilo para la línea debajo del botón al posarse sobre él */
+.buttons-container button:hover::after {
+    width: 100%;
+}
+
+
+/* Estilo para el recuadro del logo del SENA */
+.logo-button {
+    margin-right: 50px;
+    border: 1px solid #ffffff;
+    width: 120px;
+    border-radius: 5px;
+    overflow: hidden; /* Añadido para que el menú desplegable no afecte el diseño */
+}
+
+/* Estilo para el contenedor del logo y la flecha en el logo-button */
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo para el icono de SENA en el logo-button */
+.logo-button .logo-container .logo-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+    transition: transform 0.3s;
+    align-items: center;
+
+}
+
+/* Estilo al posarse sobre el recuadro del logo */
+.logo-button:hover .logo-container .logo-image {
+    transform: scale(0.9); /*  tamaño al hacer hover */
+}
+
+/* Estilo para la flecha al lado del icono de SENA en el logo-button */
+.custom-arrow {
+    background: none;
+    font-size: 1.2em; 
+    margin-left: 5px; 
+    color: #fffefe; 
+    transition: color 0.3s; /* Agrega una transición para suavizar el cambio de color */
+}
+
+/* Cambio de color al posarse sobre el botón */
+.logo-button:hover .logo-container .custom-arrow {
+    color: #13ad13; 
+}
+
+.logo-button .logo-container {
+    border: wheat;
+    outline: none;
+    font-size: 1.2em;
+    padding: 1px; 
+    border-radius: 3px; 
+    cursor: pointer;
+}
+
+/* Estilo para el menú del logo */
+.logo-menu {
+    display: none;
+    position: absolute;
+    margin-top: 5px;
+    transform: translateX(-50%); 
+    width: 220px;
+    background-color: white;
+    border: 2px solid #008000;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+}
+
+/* Alineación del texto dentro del menú del logo */
+.logo-menu p {
+    margin: 0;
+    padding: 5px 10px;
+    font-size: 16px;
+    text-align: center;
+    color: #008000;
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.logo-menu button {
+    display: block;
+    background: none;
+    border: none;
+    color: #FFA500;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    align-items: center;
+    text-align: left;
+    white-space: nowrap;
+    position: relative; 
+}
+
+
+.logo-menu button::after {
+    content: "";
+    display: block;
+    width: 0; /* Inicialmente invisible */
+    height: 2px;
+    background-color: #FFA500;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.50s ease; 
+}
+
+.logo-menu button:hover::after {
+    width: 100%;
+}
+
+.logo-menu button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.logo-menu button:hover {
+    color: #006400;
+    transition: border-color 0.20s ease;
+}
+
+.logo-menu button img.sennova-icon {
+    width: 200px; 
+    height: 50px; 
+    margin-left: 5px;
+    margin-top: 7px;
+}
+
+
+
+
+/* Media query para pantallas más pequeñas */
+@media screen and (max-width: 1000px) {
+    .leftbuttoncontainer {
+        justify-content: center;
+        height: auto;
+        padding: 10px; 
+        text-align: center; 
+    }
+
+    .leftbuttoncontainer button {
+        margin-left: 0;
+    }
+
+    .dropdown-menu {
+        text-align: center; 
+        justify-content: center;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        margin-left: 1px;
+    }
+
+    /* Estilo para el logo de CENIGRAF en pantallas más pequeñas */
+    .logo-container {
+        margin-left: 10px; 
+    }
+
+    .logo-container img {
+        height: 30rem; 
+        width: 100%; 
+    }
+
+    
+    .logo-button {
+        margin-right: 50px;
+        border: 1px solid #ffffff;
+        width: 120px;
+        border-radius: 5px;
+        overflow: hidden; 
+    }
+    
+    .logo-container {
+        display: flex;
+        align-items: center
+    }
+    
+
+    .logo-menu {
+        display: none;
+        position: absolute;
+        margin-top: 5px;
+        transform: translateX(-50%); 
+        width: 220px;
+        background-color: white;
+        border: 2px solid #008000;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 3;
+    }
+    
+
+    .logo-menu p {
+        margin: 0;
+        padding: 5px 10px;
+        font-size: 16px;
+        text-align: center;
+        color: #008000;
+        white-space: nowrap; 
+    }
+    
+    .logo-menu button {
+        display: block;
+        background: none;
+        border: none;
+        color: #FFA500;
+        font-size: 16px;
+        margin-bottom: 10px;
+        cursor: pointer;
+        align-items: center;
+        text-align: left; 
+        white-space: nowrap; /
+    }
+    
+    .logo-menu button img {
+        width: 20px;
+        height: 20px;
+        margin-right: 0px;
+    }
+    
+    .logo-menu button:hover {
+        color: #006400;
+    }
+    
+    .logo-menu button img.sennova-icon {
+        width: 200px;
+        height: 50px; 
+        margin-left: 5px;
+        margin-top: 7px;
+    }
+
+    .buttons-container button {
+        display: none;
+    }
+
+    
+    /* Estilo para la nueva sección debajo del carrusel en pantallas más pequeñas */
+    .menubox2-container {
+        display: flex;
+        flex-direction: column;
+        height: 9rem;
+        width: 107vw; 
+        background:  linear-gradient(to top, #27a0024d, rgba(128, 128, 128, 0.308), #f3920056),
+        linear-gradient(to right, #27a002 20%, transparent 80%),
+        linear-gradient(to left, #f39200 20%, transparent 80%);
+        align-items: center;
+        justify-content: center;
+        padding: 20px; 
+        box-sizing: border-box; 
+        position: relative;
+    }
+
+    .menubox2-buttons {
+        display: flex;
+        flex-direction: column; 
+        width: 107vw;
+        text-align: center;
+    }
+
+
+    /* Estilo para los botones en menubox2-container en pantallas más pequeñas */
+    .menubox2-container button {
+        background: white;
+        border: 2px solid rgb(221, 157, 61); 
+        color: black;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 10px; 
+        transition: border-color 0.5s, color 0.5s, background-color 0.5s; 
+    }
+
+    /* Estilo para el fondo blanco y letra verde al posarse sobre el botón */
+    .menubox2-container button:hover {
+        background: linear-gradient(to top, #27a0024d, rgba(128, 128, 128, 0.308), #f3920056),
+        linear-gradient(to right, #27a002 20%, transparent 80%),
+        linear-gradient(to left, #f39200 20%, transparent 80%);
+        align-items: center;
+        color: white; 
+        border-color: transparent; 
+    }
+
+    .menubox2-container:hover {
+        background: white;
+        align-items: center;
+        color: white; 
+        border-color: #f39200; 
+    }
+
+    .buttons-container button {
+        display: none;
+    }
+
+    .top5proyectos .square-button {
+        display: block; 
+        width: 100%; 
+        max-width: none;
+    }
+
+
+}
+
+    
+
+
+
+
+/* Estilo para el carrusel */
+.swiper-container {
+    height: 35rem;
+    width: 100%;
+    margin: auto; 
+    display: flex;
+    background-color: rgb(235, 232, 232);
+    align-items: center;
+    position: relative; /* Necesario para el posicionamiento de las flechas y la paginación */
+    overflow: hidden; /* Agregado para recortar las imágenes que se salen del contenedor */
+}
+
+/* Estilo para las diapositivas del carrusel */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+
+/* Estilo para los botones de navegación del carrusel */
+.swiper-button-next, .swiper-button-prev {
+    color: #111111;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1; 
+    cursor: pointer;
+    width: 3px; 
+}
+
+.swiper-button-next {
+    right: 0; 
+}
+
+.swiper-button-prev {
+    left: 0; 
+}
+
+/* Estilo para los botones de navegación del carrusel al pasar el ratón */
+.swiper-button-next:hover, .swiper-button-prev:hover {
+    color: #ff8c00;
+}
+
+/* Estilo para la paginación del carrusel */
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.swiper-pagination-bullet {
+    width: 10px; 
+    height: 10px; 
+    background-color: #888; 
+    margin: 0 5px; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #ff8c00; /* Color del punto activo */
+}
+
+
+/* Estilo para el título de la diapositiva */
+.slide-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con transparencia */
+    text-align: center;
+    color: #fff; /* Color del texto del título */
+    padding: 10px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluye el padding en el ancho y alto */
+    z-index: 2; /* Asegura que el título esté sobre la imagen o video */
+}
+
+
+
+
+/* Media query para pantallas más grandes */
+@media screen and (min-width: 1001px) {
+    /* Oculta los botones en menubox2-container en pantallas más grandes */
+    .menubox2-container button {
+        display: none;
+    }
+
+    .swiper-container {
+        height: 50rem;
+        width: 60vw;
+    }
+    
+}
+
+
+.aviso {
+    align-items: center;
+    height: 3rem;
+    display: flex;
+    background: linear-gradient(to top, #27a002, #f39200);
+    width: 100vw;
+}
+
+
+
+/* SECCIÓN DE FEST M.A */
+.festivalmenteabierta {
+    align-items: center;
+    text-align: center;
+    height: 55rem;
+    display: flex;
+    background-image: url(img/backgroundSecciones.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 105vw;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+.festival-text {
+    color: rgb(3, 68, 3); 
+    -webkit-text-stroke: 0.5px rgba(255, 68, 0, 0.438); 
+    font-family: 'Palo2' ;
+    max-width: 1000px; 
+    margin: auto; 
+    padding: 20px; 
+    font-size: 1.8em; 
+    line-height: 1.5; 
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.festivalmenteabierta.show .festival-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+/* SECCIÓN ESTILOS PARA LOS PROYECTOS */
+.top5proyectos {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 80rem; 
+    width: 100vw;
+}
+
+/* Estilos para el banner */
+.top5proyectos .banner {
+    margin-top: 70px;
+    margin-left: 30px;
+    background-color: #FFFFFF; 
+    font-family: 'Groovy';
+    text-decoration: wavy;
+    font-size: 4vw; /* Ajusta el tamaño del texto responsivo según el ancho de la ventana */
+    text-align: center;
+    width: 104vw; /* Ocupa el ancho completo de la ventana */
+    padding: 20px 0;
+    color: #FFD700;
+    -webkit-text-stroke: 2px #ff8800; 
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+
+/* Contenedor de los botones */
+.top5proyectos .buttons-container {
+    margin-left: 50px;
+    display: flex-wrap; /* Cambia de flex a flex-wrap */
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para los botones cuadrados en top5proyectos */
+.top5proyectos .square-button {
+    width: 250px;
+    height: 500px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #FFA500;
+    border-radius: 15px;
+    color: #FFFFFF;
+    cursor: pointer;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Estilo para la línea naranja al posarse sobre los botones en top5proyectos */
+.top5proyectos .square-button::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: transparent; /* Anula el color de la línea naranja */
+    transition: width 0.50s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Estilo para la línea debajo del botón al posarse sobre él en top5proyectos */
+.top5proyectos .square-button:hover::after {
+    width: 0; /* Anula la animación de la línea naranja */
+}
+
+
+
+/* ESTILOS BOTÓN DE Alusky!!! */
+.top5proyectos .button1 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-image: url('img/botonAlusky.jpg');
+    background-size: cover;
+    height: 400px; 
+    min-height: 200px;
+}
+
+.top5proyectos .button1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(243, 146, 0, 0);  
+    opacity: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+/* Capa adicional para la imagen del logo en hover para el botón 1 */
+.top5proyectos .button1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-image: url('img/logoAlusky.png');
+    background-size: 80%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+/* Muestra ambas capas al hacer hover sobre el botón 1 */
+.top5proyectos .button1:hover::before,
+.top5proyectos .button1:hover::after {
+    opacity: 1;
+    background-color: rgba(13, 77, 150, 0.5); 
+}
+
+/* Estilos para el modal 1 */
+.modal-proyecto1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content-proyecto1 {
+    width: 70%; 
+    height: 50rem; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    background-image: url('img/proyectoAlusky.png'); 
+    background-color: rgba(255, 255, 255, 0.315);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 100px;
+    cursor: pointer;
+    color: black; 
+    z-index: 4;  
+}
+
+
+
+/* ESTILOS BOTÓN DE AlCamello!!! */
+.top5proyectos .button2 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-image: url('img/botonAlCamello.jpg');
+    background-size: cover;
+    height: 400px; /* Ajusta según sea necesario */
+    min-height: 200px; /* Establece una altura mínima */
+}
+
+.top5proyectos .button2::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(243, 146, 0, 0); 
+    opacity: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+/* Capa adicional para la imagen del logo en hover para el botón 2 */
+.top5proyectos .button2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-image: url('img/logoAlCamello.png');
+    background-size: 80%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+/* Muestra ambas capas al hacer hover sobre el botón 2 */
+.top5proyectos .button2:hover::before,
+.top5proyectos .button2:hover::after {
+    opacity: 1;
+    background-color: rgba(110, 56, 11, 0.397); 
+}
+
+/* Estilos para el modal 2 */
+.modal-proyecto2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content-proyecto2 {
+    width: 70%; 
+    height: 50rem; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    background-image: url('img/proyectoAlCamello.png'); 
+    background-color: rgba(255, 255, 255, 0.315);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 100px;
+    cursor: pointer;
+    color: black; /* Ajusta el color del icono de cierre */
+    z-index: 4;  /* Ajusta el índice z para que esté por encima de todo */
+}
+
+
+
+
+
+/* ESTILOS BOTÓN DE Defruni!!! */
+.top5proyectos .button3 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-image: url('img/botonDefruni.jpeg');
+    background-size: cover;
+    height: 400px; /* Ajusta según sea necesario */
+    min-height: 200px; /* Establece una altura mínima */
+}
+
+/* Capa adicional para el fondo amarillo oscuro en hover para el botón 1 */
+.top5proyectos .button3::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(243, 146, 0, 0); /* Cambiado a color transparente inicialmente */
+    opacity: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease; /* Agregada transición para el color de fondo y la opacidad */
+    z-index: 2;
+    border-radius: 10px;
+}
+
+/* Capa adicional para la imagen del logo en hover para el botón 1 */
+.top5proyectos .button3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-image: url('img/logoDefruni.png');
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+/* Muestra ambas capas al hacer hover sobre el botón 1 */
+.top5proyectos .button3:hover::before,
+.top5proyectos .button3:hover::after {
+    opacity: 1;
+    background-color: rgba(15, 128, 136, 0.411); 
+}
+
+/* Estilos para el modal 3 */
+.modal-proyecto3 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content-proyecto3 {
+    width: 70%; /* Cambiado a un valor más pequeño, ajusta según tus necesidades */
+    height: 50rem; /* Cambiado a un valor más pequeño, ajusta según tus necesidades */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    background-image: url('img/proyectoDefruni.png'); 
+    background-color: rgba(255, 255, 255, 0.315);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 100px;
+    cursor: pointer;
+    color: black; /* Ajusta el color del icono de cierre */
+    z-index: 4;  /* Ajusta el índice z para que esté por encima de todo */
+}
+
+
+
+
+
+
+/* ESTILOS BOTÓN DE Talentic!!! */
+.top5proyectos .button4 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-image: url('img/botonTalentic.jpg');
+    background-size: cover;
+    height: 400px; 
+    min-height: 200px; 
+}
+
+
+.top5proyectos .button4::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(243, 146, 0, 0); 
+    opacity: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+
+.top5proyectos .button4::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-image: url('img/logoTalentic.png');
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+
+.top5proyectos .button4:hover::before,
+.top5proyectos .button4:hover::after {
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.411); 
+}
+
+
+/* Estilos para el modal 4 */
+.modal-proyecto4 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content-proyecto4 {
+    width: 70%; 
+    height: 50rem; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    background-image: url('img/proyectoTalentic.png'); 
+    background-color: rgba(255, 255, 255, 0.315);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 100px;
+    cursor: pointer;
+    color: black; /* Ajusta el color del icono de cierre */
+    z-index: 4;  /* Ajusta el índice z para que esté por encima de todo */
+}
+
+
+/* ESTILOS BOTÓN DE Universal Comics!!! */
+.top5proyectos .button5 {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-image: url('img/botonUniversalComics.jpg');
+    background-size: cover;
+    height: 400px; 
+    min-height: 200px; 
+}
+
+.top5proyectos .button5::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(243, 146, 0, 0); 
+    opacity: 0;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    z-index: 2;
+    border-radius: 10px;
+}
+
+.top5proyectos .button5::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-image: url('img/logoUniversalComics.png');
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
+    border-radius: 10px;
+}
+
+/* Muestra ambas capas al hacer hover sobre el botón 1 */
+.top5proyectos .button5:hover::before,
+.top5proyectos .button5:hover::after {
+    opacity: 1;
+    background-color: rgba(128, 128, 128, 0.452); 
+}
+
+/* Estilos para el modal 5 */
+.modal-proyecto5 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-content-proyecto5 {
+    width: 70%; 
+    height: 50rem; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    background-image: url('img/proyectoUniversalComics.png'); 
+    background-color: rgba(255, 255, 255, 0.315);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 100px;
+    cursor: pointer;
+    color: black; /* Ajusta el color del icono de cierre */
+    z-index: 4;  /* Ajusta el índice z para que esté por encima de todo */
+}
+
+
+@media screen and (max-width: 1000px) {
+    .top5proyectos .square-button {
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+        margin: 10px;
+    }
+}
+
+
+/* SECCIÓN DE SENNOVA */
+.sennova {
+    height: 50rem;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    background-image: url(img/backgroundSecciones.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; 
+    width: 105vw; 
+    padding: 10px;
+}
+
+/* Estilos para el título Wow */
+.wow-title {
+    font-size: 5em; 
+    color: black;
+    font-family: 'mancha';
+}
+
+.sennova-text {
+    text-align: center;
+    margin-top: 8px; 
+    color: black;
+    font-size: 2em;
+    max-width: 800px; 
+    margin: 0 auto;
+    margin-bottom: 70px;
+    font-family: 'palo2';
+}
+
+
+/* SECCIÓN DE CRÉDITOS */
+.creditos-container {
+    background-color: #000; 
+    color: #fff; 
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    font-family: 'Palo2';
+}
+
